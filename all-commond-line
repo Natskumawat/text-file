@@ -1,0 +1,255 @@
+unrar x FileName.rar
+
+https://www.rosehosting.com/blog/how-to-install-magento-2-4-3-on-ubuntu-20-04/
+
+https://www.manishmittal.com/how-to-remove-deployment-version-number-from-static-content-file-paths-in-magento-2/
+
+systemctl status php*-fpm.service
+
+-- hosts file create --  
+upstream fastcgi_backendklinq {
+    # socket
+    server   unix:/var/run/php/php7.4-fpm.sock;
+    # use tcp connection
+    #  server  127.0.0.1:9000;
+   
+}
+
+local.thehorseco.com
+
+
+server {
+    listen 80; #reuseport
+    server_name local.klinq.com;
+
+    set $MAGE_ROOT /var/www/local.klinq.com;
+
+   set $MAGE_MODE developer;
+#    set $MAGE_MODE default;
+#    set $MAGE_MODE production;
+
+    include /var/www/local.klinq.com/nginx.conf.sample;
+    fastcgi_read_timeout 3000;
+
+    access_log /var/log/nginx/klinq-access.log;
+    error_log /var/log/nginx/klinq-error.log error;
+}
+
+host file add etc-host
+
+127.0.0.1	localhost
+127.0.1.1	Hunter
+127.0.1.2	local.klinq.com
+127.0.1.3	local.rivafashion.com
+
+
+https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-20-04-1
+
+user : InovantNitesh
+NewToken : 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
+
+
+fastcgi_backendhorseco
+
+-- all base path change query--  
+update core_config_data set value = 'http://local.klinq.com/' where path = 'web/unsecure/base_url';
+update core_config_data set value = 'http://local.klinq.com/' where path = 'web/secure/base_url';
+update core_config_data set value = 'http://local.klinq.com/' where path = 'web/unsecure/base_link_url';
+update core_config_data set value = 'http://local.klinq.com/pub/static/' where path = 'web/unsecure/base_static_url';
+update core_config_data set value = 'http://local.klinq.com/pub/media/' where path = 'web/unsecure/base_media_url';
+update core_config_data set value = 'http://local.klinq.com/pub/static/' where path = 'web/secure/base_static_url';
+update core_config_data set value = 'http://local.klinq.com/pub/media/' where path = 'web/secure/base_media_url';
+
+
+-- all base path change query--  
+update core_config_data set value = 'https://local.rivafashion.com/' where path = 'web/unsecure/base_url';
+update core_config_data set value = 'https://local.rivafashion.com/' where path = 'web/secure/base_url';
+update core_config_data set value = 'https://local.rivafashion.com/' where path = 'web/unsecure/base_link_url';
+update core_config_data set value = 'https://local.rivafashion.com/pub/static/' where path = 'web/unsecure/base_static_url';
+update core_config_data set value = 'https://local.rivafashion.com/pub/media/' where path = 'web/unsecure/base_media_url';
+update core_config_data set value = 'https://local.rivafashion.com/pub/static/' where path = 'web/secure/base_static_url';
+update core_config_data set value = 'https://local.rivafashion.com/pub/media/' where path = 'web/secure/base_media_url';
+
+
+update core_config_data set value = 'http://local.thehorseco.com/' where path = 'web/unsecure/base_url';
+update core_config_data set value = 'http://local.thehorseco.com/' where path = 'web/unsecure/base_link_url';
+update core_config_data set value = 'http://local.thehorseco.com/' where path = 'web/secure/base_url';
+update core_config_data set value = 'http://local.thehorseco.com/pub/static/' where path = 'web/unsecure/base_static_url';
+update core_config_data set value = 'http://local.thehorseco.com/pub/media/' where path = 'web/unsecure/base_media_url';
+update core_config_data set value = 'http://local.thehorseco.com/pub/static/' where path = 'web/secure/base_static_url';
+update core_config_data set value = 'http://local.thehorseco.com/pub/media/' where path = 'web/secure/base_media_url';
+
+
+update core_config_data set value = 'http://local.arbanah.com/' where path = 'web/unsecure/base_url';
+update core_config_data set value = 'http://local.arbanah.com/' where path = 'web/secure/base_url';
+update core_config_data set value = 'http://local.arbanah.com/pub/static/' where path = 'web/unsecure/base_static_url';
+update core_config_data set value = 'http://local.arbanah.com/pub/media/' where path = 'web/unsecure/base_media_url';
+update core_config_data set value = 'http://local.arbanah.com/pub/static/' where path = 'web/secure/base_static_url';
+update core_config_data set value = 'http://local.arbanah.com/pub/media/' where path = 'web/secure/base_media_url';
+
+
+INSERT INTO core_config_data (path, value) VALUES ('dev/static/sign', 0) ON DUPLICATE KEY UPDATE value = 0;
+
+select * from core_config_data where path ='dev/static/sign';
+select * from core_config_data where path like '%base%url%';
+
+sudo apt-get install php7.4-init
+
+-- create new admin user ---- 
+php bin/magento admin:user:create --admin-user=nitesh --admin-password=Nitesh@123 --admin-email=nitesh@inovantsolutions.co --admin-firstname=Nitesh --admin-lastname=Kumawat
+
+git clone (url pest)
+
+
+https://magecomp.com/blog/magento-2-add-custom-message-to-admin-sales-order-view-invoice-credit-memo/
+
+git status
+git branch
+git checkout new-nitesh-branch
+
+git push -u origin new-nitesh-branch
+
+
+/* nnew barnch vreate on git start */
+
+git branch
+git checkout main // move barnch commond  
+git pull origin main
+git checkout -b shipping-text-change
+git pull origin main
+git status
+git add
+git commit -m "text"
+git push -u origin branch name 
+/* nnew barnch vreate on git and */
+
+
+/* barnch marge on git start */
+
+/* barnch marge on git end */
+
+mv -T local.rivafashion.com local.rivafashion.old.com // rename folder
+mkdir [OPTION] [DIRECTORY] // create folder
+mv /home/jack/testfile /home/jack/testfile2 // folder move
+
+
+CREATE DATABASE tutorial_database; //create sql
+
+mysql -u root -p newrivafashion < riva.sql 
+
+rm filename // file remove  
+
+unzip mysite.zip -d /var/www
+
+
+adminer for database access url 
+setup :- open terminer in pub folder : run wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php
+then : add nginx.conf.sample file (line number : 207 : file name : pest)
+
+http://local.klinq.com/admin_17bx8d 
+Deval
+Deval321$
+
+https://klinq.com/admin_17bx8d/brand/brand/index/key/89e560d7e59d46e298f4621a7cde5f4a9f90a6eb08c28ca40cba73eb0c57aa6f/
+
+Raven1
+K4@!_612
+
+
+git checkout main
+git pull origin  main branch 
+git checkout -b nitesh-new-kliq 
+git pull origin main branch
+
+deployment command 
+
+ 
+		
+Error showing file path app/bootstrap
+#ini_set('display_errors', 1);
+
+folder delete 
+rm -rf Biztech 
+
+folder copy 
+cp -R Biztech/ /var/www/local.klinq.com/vendor/
+
+
+https://github.com/Armada-Group/rivafashion.git
+
+ 1174  git clone https://github.com/Armada-Group/rivafashion.git
+ 1192  git checkout -b dev-nitesh
+ 1193  git branch
+ 1194  git status
+ 1195  git rebase main
+ 1196  git push origin dev-nitesh
+ 1197  git status
+ 1198  git add app/design/frontend/Mgs/claue/web/css/local.css
+ 1199  git status
+ 1200  git commit -m "reguter mobile text box fixed"
+ 1201  git push -u origin dev-nitesh
+ 1202  git branch -d dev-nitesh-riva
+ 1203  git push origin --delete dev-nitesh-riva
+ 
+ 1204  git checkout .
+ 1226  git status
+ 1227  git clean -fdx
+ 1228  clear
+ 1229  git status
+ 1230  git pull origin dev-nitesh
+ 1231  git pull origin main
+ 1232  git log
+ 1233  clear
+ 1234  git status
+ 1235  git branch
+ 1236  git add app/design/frontend/Mgs/claue/web/css/local.css
+ 1237  git add app/design/frontend/Mgs/claue_rtl/web/css/local_rtl.css
+ 1238  git commit -m "conflicting fixed"
+ 1239  git push origin dev-nitesh
+ 1240  git pull origin dev-nitesh
+ 1241  git status
+ 1242  git diff
+ 1243  clear
+ 1244  git diff
+ 1245  git status
+ 1246  git add app/design/frontend/Mgs/claue/web/css/local.css
+ 1247  git commit -m "css update"
+ 1248  git push origin dev-nitesh
+
+Solution
+Step 1: You should DELETE Core module from vendor module via composer module 
+ 
+app/code/Mageplaza/Core
+vendor/mageplaza/core-m2 (if any)
+Run the following command:
+
+composer remove mageplaza/core-m2
+rm -rf app/code/Mageplaza/Core
+rm -rf vendor/mageplaza/core-m2
+composer dump-autoload
+Step 2: Now install Mageplaza_Core again run upgrade command line to resolve the issue.
+
+composer require mageplaza/module-core
+php bin/magento setup:upgrade
+
+
+Public Key: 802fea1c074ee8526ef627b976a5d7cc Copy
+Private Key: 12bf90b10095fe9908c5455cb3784539 Copy
+
+Public Key: 802fea1c074ee8526ef627b976a5d7cc
+Private Key: 12bf90b10095fe9908c5455cb3784539
+
+
+
+'host' => 'localhost',
+'dbname' => 'strongsolar_solar',
+'username' => 'strongsolar_solar',
+'password' => '[Q^WB{j]b-wU',
+
+
+rm -rf var/cache var/view_preprocessed var/page_cache generated/* pub/static/frontend
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy
+
+
